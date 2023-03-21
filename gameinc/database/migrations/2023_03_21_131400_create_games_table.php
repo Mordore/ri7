@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Game', function (Blueprint $table) {
+        Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table-text('description');
-            $table->string('category');
-            $table->string('image');
-            $table->string('averageRate');
             $table->timestamps();
+            $table->string('name');
+            $table->text('description');
+            $table->string('image');
+            $table->float('averageRate');
         });
     }
 
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Game');
+        Schema::dropIfExists('games');
     }
 };
